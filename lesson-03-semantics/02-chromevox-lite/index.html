@@ -9,7 +9,7 @@
     <!-- Mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-      iframe#wombats {
+      iframe#flight-booking {
           position: fixed;
           top: 0;
           left: 0;
@@ -22,7 +22,7 @@
     </style>
   </head>
   <body>
-    <iframe id="wombats" src="./wombats.html"></iframe>
+    <iframe id="flight-booking" src="../../lesson-02-focus/basic-form/index.html"></iframe>
     <script>
       function injectChromeVox(frame) {
         var templates = document.querySelectorAll('template');
@@ -57,7 +57,7 @@
         }
         appendNext();
       }
-      var frame = document.getElementById('wombats');
+      var frame = document.getElementById('flight-booking');
       frame.addEventListener('load', injectChromeVox.bind(null, frame));
     </script>
 
@@ -111,6 +111,9 @@
         // Prevent ChromeVox from playing an earcon on startup.
         window.saveAudio = window.Audio;
         window.Audio = function() {};
+
+        // blur out the page content
+        document.querySelector('.wrapper').classList.add('blur');
       </script>
     </template>
 
